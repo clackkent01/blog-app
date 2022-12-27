@@ -1,5 +1,17 @@
-<br/>
-<center>
-    <h1>404 Error</h1>
-    <p>Page not found - try Again</p>
-</center>
+{% extends 'base.html' %}
+
+{% block content %}
+{%  for message in get_flashed_messages() %}
+    <div class="alert alert-secondary  alert-dismissible fade show" role="alert">
+  <strong> Hey {{name|capitalize}}-{{ message }}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+{% endfor %}
+    <br/>
+    <center>
+        <h1>404 Error</h1>
+        <p>Page not found - try Again</p>
+    </center>
+
+{% endblock  %}
